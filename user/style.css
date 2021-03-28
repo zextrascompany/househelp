@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+h3{
+    font-weight: bold;
+    font-size:200% ;
+    color: green;
+}
+#header{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-bottom: 2px solid green;
+}
+#container{
+    width: 80%;
+    height: auto;
+    border: 2px solid green;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    text-align: center;
+}
+#container h1{
+    font-size: 4em;
+    padding: 25px;
+    text-align: center;
+    font-weight: bold;
+    color: green;
+    border-bottom: rgb(3, 58, 3) px solid;
+}
+a{
+    text-decoration: none;
+}
+#btn-div{
+
+    height: auto;
+}
+input{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+button{
+    width: 70%;
+    height: auto;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    font-size: 2em;
+    border-radius: 20px;
+    color: white;
+    background-color: green;
+    transition-duration: 0.4s;
+}
+/* button:hover{
+    background: white;
+    border: green;
+    color: green;
+} */
+#r-l{
+    width:98% ;
+     display:flex;
+}
+.btns-1-1{
+    
+    width: 70%;
+    height: auto;
+    padding: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    font-size: 2em;
+    border-radius: 20px;
+    color: white;
+    background-color: green;
+    transition-duration: 0.4s;
+
+
+}
+
+

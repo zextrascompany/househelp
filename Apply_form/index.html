@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <title>Househelp |Home</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header" style="width: 100%; height:auto; text-align: center; background-color: lightgreen;"> <img src="./house.png" style="width: 60%; max-height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+
+        <section>
+            <div style="width: 250px; height: auto; margin-left: auto;margin-right: auto; margin-top: 14px;">
+                <img src="./logo.png" width="100%" height="auto" >
+            </div>
+            
+            <div id="container" >
+                <h1></h1>
+                
+                <br>
+                <img src="./rr_left.png" width="120px" id="back">
+                <div id="btn-div">
+                    <div id="request-div">
+                        <h3>Make Your Choice</h3>
+                    <button id="btn1">Request Full-Time HouseHelp</button>
+
+                    <button id="btn2">Request Part-time HouseHelp</button>
+
+                </div>
+
+                    
+
+                   <form id="app-form" name="Application Form" method="POST" action="" netlify >
+
+                       <label>FirstName <br><input type="text" name="firstname"  placeholder="firstname" required>  </label><br>
+                       <label>LastName:<br> <input type="text" name="lastname" placeholder="lastname"  required>  </label><br>
+                      
+                       <label>Middle Name:<br> <input type="text" name="middle_name" placeholder="middle name">  </label><br>
+                       
+                       <label>Email: <br> <input type="email" name="email"  placeholder="enter email" required>  </label><br>
+                       <label>Phone Number:<br>  <input type="number" name="phonenumber"  placeholder="enter phone number" maxlength="11" minlength="11" required >  </label><br>
+                       <label>House Address:<br>  <input type="text" name="address" placeholder="enter house address" height="150px" required>  </label><br>
+                       <label><input type="checkbox" name="checkbox" value="yes" style="width: auto;" required> i have Agreed to All Houshelp.ng <a>terms and conditions</a></label><br>
+                       <input type="submit" id="submit">
+
+                       
+                   </form>
+
+                </div>
+                    <br>
+                    <br>
+                    
+                <div id="r-l">
+
+                    
+                    
+                </div>
+
+            
+
+                
+
+
+            </div> 
+            <h2 style="text-align: center; margin-top: 300px; color: #333;"> Copyright &copy; Househelp Inc.   2021 </h2>
+        </section>
+        <script>
+            var fulltime= document.querySelector("#btn1");
+            var Parttime= document.querySelector("#btn2");
+            var request_div = document.querySelector("#request-div")
+            var app_form =document.querySelector("#app-form");
+            var real_form = document.querySelector("form");
+            var back = document.querySelector('#back');
+
+
+            console.log(real_form)
+
+            Parttime.addEventListener("click",()=>{
+                window.location.href="../user"
+            })
+
+            
+
+            fulltime.addEventListener("click",()=>{
+                request_div.style.display = "none";
+                app_form.style.display="Block";
+                console.log(real_form);
+            })
+
+            back.addEventListener("click", ()=>{
+                request_div.style.display = "block";
+                app_form.style.display="none";
+            })
+            // real_form.addEventListener("submit", e =>{
+
+
+            //     e.preventDefault();
+            //     console.log("click")
+
+            //     const formData = new FormData(real_form);
+            //     fetch(real_form.getAttribute("action"),{
+            //         method: "POST",
+            //         headers:{
+            //             "Accept":"applicatio/x-www--form-urlencoded;charset=UTF-8",
+            //             'Content-Type':"applicatio/x-www--form-urlencoded;charset=UTF-8"
+            //         },
+            //         body: new URLSearchParams(formData).toString()
+            //     }).then(res=>{
+            //         if(res){
+            //             console.log("form submission successful");
+            //             console.log(res);
+            //             console.log(formData)
+            //         }else{
+            //             console.log("submission incomplete")
+            //         }
+            //     })
+            // })
+           
+            document.querySelector("form").addEventListener("submit", handleSubmit);
+
+                        const handleSubmit = (e) => {
+                        e.preventDefault()
+                        let myForm = document.getElementById('app-form');
+                        let formData = new FormData(myForm)
+                        fetch(myForm.getAttribute('action')  ,                                                                                            { method: 'POST',
+                            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                            body: new URLSearchParams(formData).toString()
+                        }).then(() => console.log('Form successfully submitted')).catch((error) =>
+                            alert(error))
+                        }
+        </script>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+</html>

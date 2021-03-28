@@ -1,0 +1,369 @@
+<html>
+    <head>
+        <title>Househelp |Home</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="header" style="width: 100%; height:auto; text-align: center; background-color: lightgreen;"> <img src="house.png" style="width: 60%; max-height: auto; margin-left: auto; margin-right: auto;">
+        </div>
+
+        <section>
+            <div style="width: 250px; height: auto; margin-left: auto;margin-right: auto; margin-top: 14px;">
+                <img src="./logo.png" width="100%" height="auto" >
+            </div>
+            <div style="text-align: center; font-weight: bolder; font-size: 3em; padding: 25px;">
+               <h2 style="text-align: center; font-size: 2em; color: green;"> N <span id="amount"> </span> </h2>
+            </div>
+            
+            <div id="container" >
+                <h1></h1>
+                <h3> Please Select House Chores to be Completed <br> By The Househelp</h3>
+                <br>
+                <div id="btn-div">
+
+                    <button class="btns-0"  >
+                        <i> </i>
+                        <p> Clean Living Room </p>
+                    </button>
+
+                    <button class="btns-1">
+                        <i> </i>
+                        <p> Wash Bathroom & toilet </p>
+                    </button >
+
+                    <button class="btns-2">
+                        <i> </i>
+                        <p> Clean Personal Room  </p>
+                    </button>
+
+                   
+
+                    <button class="btns-3">
+                        <i> </i>
+                        <p> Wash Dishes </p>
+                    </button>
+
+                    <button class="btns-4">
+                        <i> </i>
+                        <p> Wash Car </p>
+                    </button>
+                    <button class="btns-5">
+                        <i> </i>
+                        <p> wash clothes  </p>
+                    </button>
+
+                   
+                   
+
+
+                </div>
+                <h2 style="color: green; font-weight: bolder;">Add a new House Chores  </h2>
+                   <form style="width: 70%; margin: 15px auto; font-size: xx-large;">
+                    <input id="new-chores" type="text" style="width: 70%; height: auto;" height="3em" placeholder="enter house chores" width="70%">
+                    <input style="padding: 8px; background-color: green; color: white;" type="submit" value="submit" id="add-item-btn">
+                   </form>
+                    <br>
+                    <br>
+                    
+                <div id="r-l">
+
+                    <a style="text-align: left; margin-left: 25px; ">
+                        <img src="../rr_left.png" style="width: 150px; color: green; "> 
+                    
+                    </a>
+
+                    
+                        <script src="https://checkout.flutterwave.com/v3.js"></script>
+                    <a style="text-align: right;  margin-left: 60%;  "  id="right-arrow">
+                        <img src="../rg_arrow.png" style="width: 130px; color: green;   "  > 
+                    
+                    </a>
+               
+
+              
+
+                    
+                </div>
+
+            
+
+                
+
+
+            </div> 
+            <h2 style="text-align: center; margin-top: 300px; color: #333;"> Copyright &copy; Househelp Inc.   2021 </h2>
+        </section>
+
+        <script>
+            var newChores = document.querySelector("#new-chores")
+            var next = document.querySelector("#right-arrow")
+            var list_buttons = document.querySelectorAll(".btns")
+            var btn_div = document.querySelector("#btn-div")
+            var amount = 0;
+          
+          var  clean_L_room = document.querySelector(".btns-0");
+          var  wash_b_t = document.querySelector(".btns-1");
+          var  clean_p_room = document.querySelector(".btns-2");
+          var  wash_dish = document.querySelector(".btns-3");
+          var  wash_car = document.querySelector(".btns-4");
+          var  wash_clothes = document.querySelector(".btns-5");
+          var  cost = document.querySelector("#amount");
+
+          clean_L_room.style.background = "green";
+          wash_b_t.style.background="green";
+          clean_p_room.style.background="green";
+          wash_dish.style.background="green";
+          wash_car.style.background="green";
+          wash_clothes.style.background="green"
+
+          var chores = [];
+
+          const add_item = document.querySelector("#add-item-btn")
+          clean_L_room.addEventListener("click",()=>{
+              console.log("click!!! clean living room")
+              
+              if(clean_L_room.style.background =="green"){
+                  clean_L_room.style.background="white";
+                  clean_L_room.style.color ="green";
+                  chores.push("clean living room")
+                  console.log(chores)
+                  amount = amount + 1000;
+                  console.log(amount)
+                  cost.textContent = amount;
+              } 
+              
+              else if(clean_L_room.style.background=="white"){
+                  clean_L_room.style.background= "green";
+                  clean_L_room.style.color="white";
+                  chores.pop("clean living room")
+                  console.log(chores)
+                  amount = amount - 1000;
+                  console.log(amount)
+                  cost.textContent = amount;
+              }
+              console.log(clean_L_room.style.background);
+
+          })
+
+
+            wash_b_t.addEventListener("click",()=>{
+                console.log("click!!! toilet & bathroom")
+                if(wash_b_t.style.background =="green"){
+                  wash_b_t.style.background="white";
+                  wash_b_t.style.color ="green";
+                  chores.push("wash-bathroom-toilet")
+                  console.log(chores)
+                  amount = amount + 700;
+                  console.log(amount)
+                  cost.textContent = amount;
+              } 
+              
+              else if(wash_b_t.style.background=="white"){
+                  wash_b_t.style.background= "green";
+                  wash_b_t.style.color="white";
+                  chores.pop("wash-bathroom-toilet");
+                  console.log(chores)
+                  amount = amount - 700;
+                  console.log(amount)
+                  cost.textContent = amount;
+              }
+              console.log(wash_b_t.style.background);
+
+          })
+            
+            clean_p_room.addEventListener("click",()=>{
+                console.log("click!!! personal room" )
+                 if(clean_p_room.style.background =="green"){
+                  clean_p_room.style.background="white";
+                  clean_p_room.style.color ="green";
+                  chores.push("clean-personal-room")
+                  amount = amount + 500;
+                  console.log(amount)
+                  cost.textContent = amount;
+              } 
+              
+              else if(clean_p_room.style.background=="white"){
+                  clean_p_room.style.background= "green";
+                  clean_p_room.style.color="white";
+                  chores.pop("clean-personal-room")
+                  amount = amount - 500;
+                  console.log(amount)
+                  cost.textContent = amount;
+              }
+            })
+
+            wash_dish.addEventListener("click",()=>{
+                console.log("click!!! dish")
+
+                if(wash_dish.style.background =="green"){
+                  wash_dish.style.background="white";
+                  wash_dish.style.color ="green";
+                  chores.push("wash-dish")
+                  console.log(chores)
+                  amount = amount + 700;
+                  console.log(amount)
+                  cost.textContent = amount;
+              } 
+              
+              else if(wash_dish.style.background=="white"){
+                  wash_dish.style.background= "green";
+                  wash_dish.style.color="white";
+                  chores.pop("wash-dish")
+                  console.log(chores)
+                  amount = amount - 700;
+                  console.log(amount)
+                  cost.textContent = amount;
+              }
+
+
+            })
+
+            wash_car.addEventListener("click",()=>{
+                console.log("click!!! car")
+                if(wash_car.style.background =="green"){
+                  wash_car.style.background="white";
+                  wash_car.style.color ="green";
+                  chores.push("wash-car")
+                  amount = amount + 700;
+                  console.log(amount)
+                  cost.textContent = amount;
+              } 
+              
+              else if(wash_car.style.background=="white"){
+                  wash_car.style.background= "green";
+                  wash_car.style.color="white";
+                  chores.pop("wash-car")
+                  amount = amount - 700;
+                  console.log(amount)
+                  cost.textContent = amount;
+              }
+            })
+            wash_clothes.addEventListener("click",()=>{
+              console.log("click!!! clean living room")
+              
+              if(wash_clothes.style.background =="green"){
+                  wash_clothes.style.background="white";
+                  wash_clothes.style.color ="green";
+                  chores.push("Wash Clothes")
+                  console.log(chores)
+                  amount = amount + 1000;
+                  console.log(amount)
+                  cost.textContent = amount;
+              } 
+              
+              else if(wash_clothes.style.background=="white"){
+                  wash_clothes.style.background= "green";
+                  wash_clothes.style.color="white";
+                  chores.pop("Wash Clothes")
+                  console.log(chores)
+                  amount = amount - 1000;
+                  console.log(amount)
+                  cost.textContent = amount;
+              }
+              console.log(wash_clothes.style.background);
+
+          })
+           
+            add_item.addEventListener("click", e =>{
+                e.preventDefault();
+                
+                if(newChores.value.length<=0){
+                    console.log(newChores)
+
+                }else{
+                    console.log(newChores.value.length)
+                    var button = document.createElement("button")
+                        button.style.background="green";
+
+                        button.addEventListener("click",()=>{
+                            if(button.style.background =="green"){
+                        button.style.background="white";
+                        button.style.color ="green";
+                        chores.push(button.innerText)
+                        console.log(chores)
+                        amount = amount + 1000;
+                        console.log(amount)
+                        cost.textContent = amount;
+                    } 
+                    
+                    else if(button.style.background=="white"){
+                        button.style.background= "green";
+                        button.style.color="white";
+                        chores.pop(button.innerText)
+                        console.log(chores)
+                        amount = amount - 1000;
+                        console.log(amount)
+                        cost.textContent = amount;
+                    }
+                    console.log(wash_clothes.style.background);
+
+                })
+                
+
+                        
+                        button.innerText = newChores.value;
+                        btn_div.appendChild(button);
+                        newChores.value = "";
+
+                }
+            
+                
+
+                
+            })
+
+            next.addEventListener("click",e =>{
+                e.preventDefault();
+                window.sessionStorage.setItem("chores",chores)
+                window.sessionStorage.setItem("cost",cost)
+                console.log(chores)
+                console.log(window.sessionStorage.getItem('chores'));
+
+                function makePayment() {
+    FlutterwaveCheckout({
+      public_key: "FLWPUBK-d414dfaf4d80cb19a871956045965e25-X",
+      tx_ref: "hooli-tx-1920bbtyt",
+    //   amount: amount,
+    amount:amount,
+      currency: "NGN",
+      country: "NG",
+      payment_options: "card, mobilemoneyghana, ussd",
+      redirect_url: // specified redirect URL
+        "./details",
+      meta: {
+        consumer_id: 23, 
+        consumer_mac: "92a3-912ba-1192a",
+      },
+      customer: {
+        email: "customer@gmail.com",
+        phone_number: "08102909304",
+        name: "customer",
+      },
+      callback: function (data) {
+        console.log(data);
+      },
+      onclose: function() {
+        // close modal
+      },
+      customizations: {
+        title: "Househelp.ng",
+        description: "Payment for House chores selected",
+        logo: "https://househelp.netlify.app/logo.png",
+      },
+    });
+  }
+                makePayment();
+                // window.location.href="./details";
+
+            })
+
+            
+           
+        </script>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+</html>
